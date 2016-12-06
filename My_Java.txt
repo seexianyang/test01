@@ -1,0 +1,1090 @@
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+               
+         Status 
+         
+                        Health: normal- belly fat
+         Programming knowledge: weak
+                            IQ: normal
+                            EQ: weak
+ 
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+              Steady Progress                                                                           
+
+       To move forward step by step 
+"I will make steady progress despite difficulty"
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+
+              My New Java beginning 
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+
+
+     {1}   [Object oriented programming concept]
+
+* Object- it's state and behavior represent in an object.
+
+* class- it's a blueprint or model from created object.
+
+* Inheritances- class inherit the states and behavior of their parent class(super class).
+
+* Interface- method forms the object interface with the outside world, power off/On.  eg. public void speedUp(int increment);
+
+* Package- namespace for organiszing the class and interface in a logical manner, code in package is easier to manage.
+
+ Note: object behavior is exposed through the methods.
+
+ 
+ Object- state(everything used to describe an object, example fan- name, color, volt) behavior(change speed)
+
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+
+
+        {2}        [Language basic]
+
+* Variables
+
+* Operators.
+
+* Expressions,statements and blocks.
+
+* Control flow statements.
+
+
+  <Variables> has + instance variables (non static field) - means the variable of an object class A is different from another created class A. (bicycles1 variable different from bicycles2)
+                
+                + class variables (static field) - means the variables has only one copy, no matter how many object is created from it. (bicycles1 has 6 gears so do bicycles2)
+   
+                + local variables - a method often temperary store its state in local variables, which is exist inside the method only. ( int speed = 0;)
+                
+                + parameter - used in a method header and constructor to pass an instructed variable to the method.
+
+
+
+  <Naming> - variables are case sensitive, always name with letters first, not expression, use full words instead of short form for easy code reading. No java keyword too (eg. While) 
+   
+  
+  <Data type> - all variable must be declared before can be used, eg int gear = 6;
+              - byte, min value of -128 and max of 127, useful for saving memory in large array.
+              - short, min value of -32,768 and max of 32767
+              - int, min value of -2^31 and max of 2^31 -1 = 8,388,608 -1    (about 10 digits for 64 bits)
+              - Long  / value should be place in L or l if not its is counted as int
+              - float - should never be use for precise value like currency, use java.math.BigDecimal instead./ values should be place as F or f, if not its counted as double.
+              - double
+              - boolean, true or false value only, use for simple flag of true/false condition.
+              - char
+  
+
+
+   <default values> - it is a good pratice to set default values, while the computer will do it for you/ It is possible to set a values to the primitive data type 
+    
+                                                                                                       /       boolean result = true;
+                                                                                                               char capitalC = 'C 
+                                                                                                               byte b = 100;
+                                                                                                               short s = 10000;
+                                                                                                               int i = 100000;
+   Data Type	           Default Value (for fields)  
+   byte   	           0
+   short                   0
+   int	                   0
+   long	                   0L
+   floa                    0.0f
+   double   	           0.0d
+   char	                   '\u0000'
+   String(or any object)   null
+   boolean                 false
+
+
+  <Reference types>
+
+   Other types in Java (reference types), including String one, are related to specific classes, interfaces or arrays. By default, all variables of reference types are set to null.
+
+
+   <Underscore for numeric literals>
+
+    you can use underscore for numbers that are too big for easier reading 
+
+    eg. Long longVal = 1001_900_100.55L;
+
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+  
+   <Array> - array is a container that store elements from index 0;   
+ 
+
+   eg.  // declares an array of integers
+        int[] anArray;
+
+        // allocates memory for 10 integers
+        anArray = new int[10];
+           
+        // initialize first element
+        anArray[0] = 100;
+
+
+  <Mutli Dimension array>  using 2 brackers such as :  Data type [][] arraynames 
+
+
+  eg.  public static void main(String[] args) {
+        String[][] names = {
+            {"Mr. ", "Mrs. ", "Ms. "},
+            {"Smith", "Jones"}
+        };
+        // Mr. Smith
+        System.out.println(names[0][0] + names[1][0]);
+        // Ms. Jones
+        System.out.println(names[0][2] + names[1][1]);
+    }
+}
+      The output from this program is:
+
+      Mr. Smith
+      Ms. Jones 
+ 
+  Note: Arrayname.length / to determine the arraysize
+
+
+ <CopyingArray> - from one array to another array/ using system.arrayCopy 
+
+  char[] box1 =
+        {
+            'd', 'e', 'c', 'a', 'f', 'f', 'e',
+            'i', 'n', 'a', 't', 'e', 'd'
+        };
+        char[] box2 = new char[7];
+        
+        // using system.arraycopy from box1 starting space 2 to box2, starting spaces 0 to its last space 7;
+        System.arraycopy(box1, 2, box2, 0, 7);
+        System.out.println(new String(box2));
+
+// or 
+
+  class ArrayCopyOfDemo {
+    public static void main(String[] args) {
+        
+        char[] copyFrom = {'d', 'e', 'c', 'a', 'f', 'f', 'e',
+            'i', 'n', 'a', 't', 'e', 'd'};
+            
+        char[] copyTo = java.util.Arrays.copyOfRange(copyFrom, 2, 9);
+        
+        System.out.println(new String(copyTo));
+    }
+}
+
+
+
+
+
+  Note: Some other useful operations provided by methods in the java.util.Arrays class, are:
+
+     + Searching an array for a specific value to get the index at which it is placed (the binarySearch method).
+     + Comparing two arrays to determine if they are equal or not (the equals method).
+     + Filling an array to place a specific value at each index (the fill method).
+     + Sorting an array into ascending order. This can be done either sequentially, using the sort method, or concurrently, using the parallelSort method introduced in Java SE 8. 
+       Parallel sorting of large arrays on multiprocessor systems is faster than sequential array sorting.
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+
+  <Operator> - the operator has highest priority list from top to bottom.
+
+         Operator Precedence
+    Operators	      Precedence
+
+    postfix	      expr++ expr--
+
+    unary	      ++expr --expr +expr -expr ~ !
+
+    multiplicative	 * / %
+
+    additive	         + -
+
+    shift	        << >> >>>
+
+    relational	        < > <= >= instanceof
+
+    equality	               == !=
+
+    bitwise AND  	        &
+
+    bitwise exclusive OR  	^
+
+   bitwise inclusive OR	        |
+
+   logical AND	                &&
+
+   logical OR	                ||
+
+   ternary	               ? :
+
+   assignment	    = += -= *= /= %= &= ^= |= <<= >>= >>>=
+
+   
+
+   <Math operator>
+    
+    Operator	Description
+    +	        Additive operator (also used for String concatenation)   / or += or  -=
+
+    -	        Subtraction operator
+
+    *	        Multiplication operator
+
+    /	        Division operator
+
+    %    	Remainder operator
+
+  
+  <Unary Operator>
+
+    Operator	Description
+    +   	Unary plus operator; indicates positive value (numbers are positive without this, however)
+    -	        Unary minus operator; negates an expression
+    ++	        Increment operator; increments a value by 1      // ++ result will be increment first,  result++ will be increment when call again.
+    --   	Decrement operator; decrements a value by 1
+     !	        Logical complement operator; inverts the value of a boolean
+
+    
+   <The Equality and Relational Operators>
+
+    ==      equal to
+    !=      not equal to
+    >       greater than
+    >=      greater than or equal to
+    <       less than
+    <=      less than or equal to
+
+
+
+     <Condition Operator>   &&  ||
+
+      if((value1 == 1) && (value2 == 2))
+            System.out.println("value1 is 1 AND value2 is 2");
+      if((value1 == 1) || (value2 == 1))
+            System.out.println("value1 is 1 OR value2 is 1");
+
+
+   Note: if you do not put brackets () in math code, they will follow the highest priority first
+      
+
+      eg.  x + y / 100 
+
+
+           x + (y / 100) // unambiguous, recommended
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+     
+  {3} [Expression, Statement and Block]
+    
+
+   <Expression> -  is made up of variable, operator and method invocation.
+
+    
+   <Statement>  -  Statement form complete unit of expression, eg. Bic Bic1 = new Bic():
+   
+   <Block>  -   is statement in between the braces.
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+ {4} [Control flow statement]
+
+  codes are usually execute from top to bottom, however decision making statment change the flow of the execution or looping statement and branching statement. 
+   
+  Decision making statment - (if then, if-then-else, switch)     
+   
+  Looping statment - ( for, while, do-while)
+   
+  Branching statement - (break, continue, return)
+
+
+
+
+
+   1. < if then statement > -  "if" tells your program to execute a particular task if the condition is true./ if it's false then it will jump out of the "if" statement.
+
+
+   void applyBrakes() {
+    // the "if" clause: bicycle must be moving
+    if (isMoving){ 
+        // the "then" clause: decrease current speed
+        currentSpeed--;
+    }
+}
+
+   
+
+
+  2. < if then else statement >  - "else is a second path to execute once "if" is false 
+
+   eg.      int testscore = 76;
+            char grade;
+
+        if (testscore >= 90) {
+            grade = 'A';
+        } else if (testscore >= 80) {
+            grade = 'B';
+        } else if (testscore >= 70) {
+            grade = 'C';
+        } else if (testscore >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+        System.out.println("Grade = " + grade);
+    }
+
+
+
+
+   3. < Switches > - switches can works with a number of possiblity, switches work with byte, short, char , int data type and strings too. switch body has case of default.
+
+     eg.      int month = 8;
+              String monthString;
+       
+
+        switch (month) {
+            case 1:  monthString = "January";
+                     break;
+            case 2:  monthString = "February";
+                     break;
+            case 3:  monthString = "March";
+                     break;
+            case 4:  monthString = "April";
+                     break;
+            case 5:  monthString = "May";
+                     break;
+            case 6:  monthString = "June";
+                     break;
+            case 7:  monthString = "July";
+                     break;
+            case 8:  monthString = "August";
+                     break;
+            case 9:  monthString = "September";
+                     break;
+            case 10: monthString = "October";
+                     break;
+            case 11: monthString = "November";
+                     break;
+            case 12: monthString = "December";
+                     break;
+            default: monthString = "Invalid month";
+                     break;
+        }
+        System.out.println(monthString);                      // answer will be: August
+    }
+}
+     
+     Note: "if then else if" works like switches too.
+
+
+  eg.   int month = 8;
+        if (month == 1) 
+        {
+          System.out.println("January");
+        } else if (month == 2) 
+          {
+           System.out.println("February");
+           }
+      ...  // and so on.
+
+        //futurMonths is arrayList
+     
+        int month = 8;
+
+        switch (month) {
+            case 1:  futureMonths.add("January");
+            case 2:  futureMonths.add("February");
+            case 3:  futureMonths.add("March");
+            case 4:  futureMonths.add("April");
+            case 5:  futureMonths.add("May");
+            case 6:  futureMonths.add("June");
+            case 7:  futureMonths.add("July");
+            case 8:  futureMonths.add("August");
+            case 9:  futureMonths.add("September");
+            case 10: futureMonths.add("October");
+            case 11: futureMonths.add("November");
+            case 12: futureMonths.add("December");
+                     break;                                         // break for each case is not required as you want to add months into the array
+            default: break;
+        }
+
+        if (futureMonths.isEmpty()) {
+            System.out.println("Invalid month number");
+        } else {
+            for (String monthName : futureMonths) {
+               System.out.println(monthName);
+            }
+
+
+
+   Note: Break may not be needed if you don't need other case to be seperated.
+
+
+  public class StringSwitchDemo {
+
+    public static int getMonthNumber(String month) {
+
+        int monthNumber = 0;
+
+        if (month == null) {                         // it always a good practice to check if month is not equal to null first before proceed.
+            return monthNumber;
+        }
+
+        switch (month.toLowerCase()) {              // .toLowerCase() is a method that make string to lowercase, eg. A to a.
+            case "january":
+                monthNumber = 1;
+                break;
+            case "february":
+                monthNumber = 2;
+                break;
+            case "march":
+                monthNumber = 3;
+                break;
+            case "april":
+                monthNumber = 4;
+                break;
+            case "may":
+                monthNumber = 5;
+                break;
+            case "june":
+                monthNumber = 6;
+                break;
+            case "july":
+                monthNumber = 7;
+                break;
+            case "august":
+                monthNumber = 8;
+                break;
+            case "september":
+                monthNumber = 9;
+                break;
+            case "october":
+                monthNumber = 10;
+                break;
+            case "november":
+                monthNumber = 11;
+                break;
+            case "december":
+                monthNumber = 12;
+                break;
+            default: 
+                monthNumber = 0;
+                break;
+        }
+
+        return monthNumber;
+    }
+
+    public static void main(String[] args) {
+
+        String month = "August";
+
+        int returnedMonthNumber =
+            StringSwitchDemo.getMonthNumber(month);
+
+        if (returnedMonthNumber == 0) {
+            System.out.println("Invalid month");
+        } else {
+            System.out.println(returnedMonthNumber);
+        }
+    }
+}
+The output from this code is 8.
+
+
+  Note : 'If then else" statement can work with more condition while Switch statement mostly works with one condition.
+
+       : switches with mutliple condition. 
+ eg.  class SwitchDemo2 {
+    public static void main(String[] args) {
+
+        int month = 2;
+        int year = 2000;
+        int numDays = 0;
+
+        switch (month) {
+            case 1: case 3: case 5:
+            case 7: case 8: case 10:
+            case 12:
+                numDays = 31;
+                break;
+            case 4: case 6:
+            case 9: case 11:
+                numDays = 30;
+                break;
+            case 2:
+                if (((year % 4 == 0) && 
+                     !(year % 100 == 0))
+                     || (year % 400 == 0))
+                    numDays = 29;
+                else
+                    numDays = 28;
+                break;
+            default:
+                System.out.println("Invalid month.");
+                break;
+        }
+        System.out.println("Number of Days = "
+                           + numDays);
+    }
+}
+This is the output from the code:
+
+Number of Days = 29
+
+  Note : The String in the switch expression is compared with the expressions associated with each case label as if the String.equals method were being used. 
+          In order for the StringSwitchDemo example to accept any month regardless of case, 
+           month is converted to lowercase (with the toLowerCase method), 
+            and all the strings associated with the case labels are in lowercase.
+
+  
+    4. < While , Do-while statement >  -  while statement continue execute the block of statement until the condition is met. 
+
+        eg.   
+                      public static void main(String[] args){
+                      int count = 1;
+                      while (count < 11) {
+                     System.out.println("Count is: " + count);
+                     count++;
+        }
+    }
+        
+       Do-while statement execute the top statement atleast once until the condition is met. 
+         
+      eg.  
+               public static void main(String[] args){
+
+                int count = 1;
+            do {
+                 System.out.println("Count is: " + count);
+                  count++;
+               } while (count < 11);
+             }// end of do while.
+
+
+     5. < For statement >  - AKA. for Loop, repeatly loop until a condition is met. 
+           
+         
+          for (initialization; termination;increment)        /        for(int i=1; i<11; i++) { statement } 
+              {
+                statement(s)
+              }
+        
+     eg.     class ForDemo {
+             public static void main(String[] args)
+           {
+             
+             for(int i=1; i<11; i++)
+             {
+              System.out.println("Count is: " + i);
+             }
+           }
+        }//end of for loop
+
+        The output of this program is:
+
+        Count is: 1
+        Count is: 2
+        Count is: 3
+        Count is: 4
+        Count is: 5
+        Count is: 6
+        Count is: 7
+        Count is: 8
+        Count is: 9
+        Count is: 10
+           
+
+
+
+     6. < break statement > - have two form unlabel and label, a switch statement is unlabel , you can use unlabel break for , (for loop, while or Do-while)
+        
+
+
+
+       eg.  unlabel
+               class BreakDemo {
+    public static void main(String[] args) {
+
+        int[] arrayOfInts = 
+            { 32, 87, 3, 589,
+              12, 1076, 2000,
+              8, 622, 127 };
+        int searchfor = 12;
+
+        int i;
+        boolean foundIt = false;
+
+        for (i = 0; i < arrayOfInts.length; i++) {
+            if (arrayOfInts[i] == searchfor) {
+                foundIt = true;
+                break;
+            }
+        }
+
+        if (foundIt) {
+            System.out.println("Found " + searchfor + " at index " + i);
+        } else {
+            System.out.println(searchfor + " not in the array");
+        }
+    }
+} 
+
+      eg. Label 
+         
+           class BreakWithLabelDemo {
+    public static void main(String[] args) {
+
+        int[][] arrayOfInts = { 
+            { 32, 87, 3, 589 },
+            { 12, 1076, 2000, 8 },
+            { 622, 127, 77, 955 }
+        };
+        int searchfor = 12;
+
+        int i;
+        int j = 0;
+        boolean foundIt = false;
+
+    search:
+        for (i = 0; i < arrayOfInts.length; i++) {
+            for (j = 0; j < arrayOfInts[i].length;
+                 j++) {
+                if (arrayOfInts[i][j] == searchfor) {
+                    foundIt = true;
+                    break search;
+                }
+            }
+        }
+
+        if (foundIt) {
+            System.out.println("Found " + searchfor + " at " + i + ", " + j);
+        } else {
+            System.out.println(searchfor + " not in the array");
+        }
+    }
+}
+
+
+      This is the output of the program.
+
+       Found 12 at 1, 0
+
+
+      The break statement terminates the labeled statement; it does not transfer the flow of control to the label. 
+      Control flow is transferred to the statement immediately following the labeled (terminated) statement.
+
+    
+    
+    
+     7. < Continue statement > - (unlabel continue statement) skip the current iteration of for , for loop and do while loop, continue will do until the condition is met.
+
+          eg. 
+                 String searchMe = "peter piper picked a " + "peck of pickled peppers";
+                
+         int max = searchMe.length();
+         int numPs = 0;
+
+        for (int i = 0; i < max; i++) {
+            // interested only in p's
+            if (searchMe.charAt(i) != 'p')
+                continue;
+
+            // process p's
+            numPs++;
+        }
+        System.out.println("Found " + numPs + " p's in the string.");
+    }
+   
+
+
+          (label continue statement) eg.   
+                                          public static void main(String[] args) {
+
+        String searchMe = "Look for a substring in me";
+        String substring = "sub";
+        boolean foundIt = false;
+
+        int max = searchMe.length() - 
+                  substring.length();
+
+    test:
+        for (int i = 0; i <= max; i++) {
+            int n = substring.length();
+            int j = i;
+            int k = 0;
+            while (n-- != 0) {
+                if (searchMe.charAt(j++) != substring.charAt(k++)) {
+                    continue test;
+                }
+            }
+            foundIt = true;
+                break test;
+        }
+        System.out.println(foundIt ? "Found it" : "Didn't find it");
+    }
+}
+          Here is the output from this program.
+
+          Found it
+    
+     
+      8. < Return statement > return statement exit from the current method, it return a value or doesn't , in the case of public void method it's just a return with no value 
+                              or  
+                                        return   ++ count;
+
+    
+
+
+
+    9.  (Summary of Control Flow Statements)
+
+     The if-then statement is the most basic of all the control flow statements. 
+     It tells your program to execute a certain section of code only if a particular test evaluates to true. The if-then-else statement provides a secondary path of execution 
+     when an "if" clause evaluates to false. Unlike if-then and if-then-else, the switch statement allows for any number of possible execution paths. 
+
+    The while and do-while statements continually execute a block of statements while a particular condition is true. 
+    he difference between do-while and while is that do-while evaluates its expression at the bottom of the loop instead of the top. Therefore, 
+  the statements within the do block are always executed at least once. The for statement provides a compact way to iterate over a range of values. 
+
+     It has two forms, one of which was designed for looping through collections and arrays.
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+    
+
+    {5}   [Classes and object]
+
+
+
+   *Declaring class - with states, behavior, constructors, and maybe public or private.
+
+   eg.  
+
+        class MyClass {
+    // field, constructor, and 
+    // method declarations
+}
+
+
+
+   *Declaring memeber variable - can be found inside a field, inside method known as local variable or method parameter.
+
+
+    
+   *Access modifier - variable with public can be access by all classes, private variable can only be access by own class.
+   
+   eg. 
+       public class Bicycle {
+        
+    private int cadence;
+    private int gear;
+    private int speed;
+        
+    public Bicycle(int startCadence, int startSpeed, int startGear) {
+        gear = startGear;
+        cadence = startCadence;
+        speed = startSpeed;
+    }
+        
+    public int getCadence() {
+        return cadence;
+    }
+   
+
+   
+   *variable naming - should be start small cap and no numbers, in full for easy reading.
+ 
+    
+
+   *declaring method - , private or public,  return type or void, brackets , paremeter if any and braces.
+
+   
+   eg. 
+     
+    public double calculateAnswer(double wingSpan, int numberOfEngines, double length, double grossTons) 
+{
+    //do the calculation here
+}
+   
+  
+   * Naming method - should be abjective,  
+  eg.   
+
+    run
+    runFast
+    getBackground
+    getFinalData
+    compareTo
+    setX
+    isEmpty   
+
+
+    * overloading method - java allows method with the same name but different parameter. 
+
+    eg. 
+         public class DataArtist {
+    ...
+    public void draw(String s) {
+        ...
+    }
+    public void draw(int i) {
+        ...
+    }
+    public void draw(double f) {
+        ...
+    }
+    public void draw(int i, double f) {
+        ...
+    }
+}
+
+
+
+   * constructor for class - is like a method but with no return type and using class name. Constructor can have arugment or non arugment. 
+   
+ eg. 
+     public Bicycle(int startCadence, int startSpeed, int startGear) {
+    gear = startGear;
+    cadence = startCadence;
+    speed = startSpeed;
+}
+    
+   
+   + new operator with arugment or non arugment    
+    eg. 
+
+       Bicycle myBike = new Bicycle(30, 0, 8);    /  Bicycle yourBike = new Bicycle();
+
+
+
+  *parameter type - you can use any date type for constructor or methods.
+
+
+
+
+  * choices of number of arugment - three dots with a space and parametre name can be used when you are not sure if there are more parametre to be added later own.
+
+
+   eg. 
+
+     public Polygon polygonFrom(Point... corners) {
+    int numberOfSides = corners.length;
+    double squareOfSide1, lengthOfSide1;
+    squareOfSide1 = (corners[1].x - corners[0].x)
+                     * (corners[1].x - corners[0].x) 
+                     + (corners[1].y - corners[0].y)
+                     * (corners[1].y - corners[0].y);
+    lengthOfSide1 = Math.sqrt(squareOfSide1);
+
+    // more method body code follows that creates and returns a 
+    // polygon connecting the Points
+}
+ 
+   Note: you can see corners is treated like an array
+
+
+
+
+
+  *calling method from object - mainly use dots . method name, there are two kinds, one with argument, one without arugment method calling
+
+  eg. 
+     
+   objectReference.methodName(argumentList);
+ 
+    or:
+
+   objectReference.methodName();
+
+  
+
+
+  * returning a value from method - a void method doesn't have a return value, if you want to exixt the block of program just include -  return; 
+                                   
+                                  + if it has a data type method then , there must be a return value 
+                                 
+                                  eg.
+
+                                             // a method for computing the area of the rectangle
+                               
+                                 public int getArea() {
+                                                     return width * height;
+                                  }                         
+   
+
+
+   *return a class or interface
+
+
+
+
+   * this. keyword - is used to refer to a field form the class object, commonly use in constructor 
+
+   public class Point {
+    public int x = 0;
+    public int y = 0;
+        
+    //constructor
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
+
+
+
+
+
+  * access level of class modifer - determine if a class can access to a field or method.
+
+   <Access Levels>
+Modifier	Class	Package	Subclass	World
+public	Y	Y	Y	Y
+protected	Y	Y	Y	N
+no modifier	Y	Y	N	N
+private	Y	N	N	N
+
+  
+  * constructor another uses - you can use constructor to set the id by increment the number of bicycle id in constructor, and also a method to get the method.
+
+
+   eg. 
+
+      public class Bicycle {
+        
+    private int cadence;
+    private int gear;
+    private int speed;
+    private int id;
+    private static int numberOfBicycles = 0;
+        
+    public Bicycle(int startCadence, int startSpeed, int startGear){
+        gear = startGear;
+        cadence = startCadence;
+        speed = startSpeed;
+
+        // increment number of Bicycles
+        // and assign ID number
+        id = ++numberOfBicycles;
+    }
+
+    // new method to return the ID instance variable
+    public int getID() {
+        return id;
+    }
+    
+
+
+   *class methods - static method is commonly used to access static variable./ instance method can access to instance variable directly/ class(static) method can access to class variables directly.
+                    / class method can not access to instance variable or method directly but thru a object references.
+
+
+     eg.
+
+
+
+     public static int getNumberOfBicycles() {                         //  private static int numberOfBicycles = 0;
+    return numberOfBicycles;
+}   
+   
+
+   *Constant - final is used with static to indicate the value of this field can not be changed./ naming of constant value is in all cap and if more word is space with underscore
+
+               eg.
+                    static final double BOX_LENGTH = 22.4;   
+  
+                   
+
+    
+   * static initialization block 
+
+   eg.  
+     
+     static {
+    // whatever code is needed for initialization goes here
+}
+
+ 
+   + class can have initialization block - The advantage of private static methods is that they can be reused later if you need to reinitialize the class variable.
+    class Whatever {
+    public static varType myVar = initializeClassVariable();
+        
+    private static varType initializeClassVariable() {
+
+        // initialization code goes here
+    }
+}
+
+  
+   + final initialization block -  
+   
+     A final method cannot be overridden in a subclass. 
+     This is discussed in the lesson on interfaces and inheritance.
+
+class Whatever {
+    private varType myVar = initializeInstanceVariable();
+        
+    protected final varType initializeInstanceVariable() {
+
+        // initialization code goes here
+    }
+}
+
+  This is especially useful if subclasses might want to reuse the initialization method. 
+   The method is final because calling non-final methods during instance initialization can cause problems.
+
+
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+
+  
+            (Summary of Creating and Using Classes and Objects)
+
+  A class declaration names the class and encloses the class body between braces. The class name can be preceded by modifiers. 
+  The class body contains fields, methods, and constructors for the class. 
+  A class uses fields to contain state information and uses methods to implement behavior. 
+  Constructors that initialize a new instance of a class use the name of the class and look like methods without a return type.
+
+ 
+     You control access to classes and members in the same way: by using an access modifier such as public in their declaration.
+     You specify a class variable or a class method by using the static keyword in the member's declaration. 
+     A member that is not declared as static is implicitly an instance member. Class variables are shared by all instances of a class and can be accessed through the class name as well as an instance reference. 
+     Instances of a class get their own copy of each instance variable, which must be accessed through an instance reference.
+
+     You create an object from a class by using the new operator and a constructor. 
+     The new operator returns a reference to the object that was created. You can assign the reference to a variable or use it directly.
+
+     Instance variables and methods that are accessible to code outside of the class that they are declared in can be referred to by using a qualified name. 
+      The qualified name of an instance variable looks like this:
+
+     objectReference.variableName
+      The qualified name of a method looks like this:
+
+      objectReference.methodName(argumentList)
+      
+       or:
+
+      objectReference.methodName()
+
+
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-..-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+    
